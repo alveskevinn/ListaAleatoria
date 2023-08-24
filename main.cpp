@@ -5,7 +5,6 @@
 struct Item {
     std::string nome;
     std::string descricao;
-    // Adicione os campos restantes do item aqui...
 };
 
 class RegistroDeItens {
@@ -20,8 +19,7 @@ public:
     void listarItens() {
         for (const Item& item : itens) {
             std::cout << "Nome: " << item.nome << "\n";
-            std::cout << "Descrição: " << item.descricao << "\n";
-            // Liste os campos restantes do item aqui...
+            std::cout << "DescriÃ§Ã£o: " << item.descricao << "\n";
             std::cout << "-------------------------\n";
         }
     }
@@ -31,13 +29,12 @@ public:
             if (item.nome == nomeBusca) {
                 std::cout << "Item encontrado:\n";
                 std::cout << "Nome: " << item.nome << "\n";
-                std::cout << "Descrição: " << item.descricao << "\n";
-                // Liste os campos restantes do item aqui...
+                std::cout << "DescriÃ§Ã£o: " << item.descricao << "\n";
                 std::cout << "-------------------------\n";
                 return;
             }
         }
-        std::cout << "Item não encontrado.\n";
+        std::cout << "Item nÃ£o encontrado.\n";
     }
 
     void editarItem(const std::string& nomeEdicao) {
@@ -45,14 +42,13 @@ public:
             if (item.nome == nomeEdicao) {
                 std::cout << "Digite o novo nome: ";
                 std::getline(std::cin, item.nome);
-                std::cout << "Digite a nova descrição: ";
+                std::cout << "Digite a nova descriÃ§Ã£o: ";
                 std::getline(std::cin, item.descricao);
-                // Atualize os campos restantes do item aqui...
                 std::cout << "Item editado com sucesso.\n";
                 return;
             }
         }
-        std::cout << "Item não encontrado.\n";
+        std::cout << "Item nÃ£o encontrado.\n";
     }
 
     void deletarItem(const std::string& nomeDelecao) {
@@ -63,7 +59,7 @@ public:
                 return;
             }
         }
-        std::cout << "Item não encontrado.\n";
+        std::cout << "Item nÃ£o encontrado.\n";
     }
 };
 
@@ -77,17 +73,17 @@ int main() {
         std::cout << "4. Editar Item\n";
         std::cout << "5. Deletar Item\n";
         std::cout << "6. Sair\n";
-        std::cout << "Escolha uma opção: ";
+        std::cout << "Escolha uma opÃ§Ã£o: ";
 
         int opcao;
         std::cin >> opcao;
-        std::cin.ignore(); // Limpar o caractere de nova linha deixado pelo std::cin
+        std::cin.ignore(); 
 
         if (opcao == 1) {
             Item novoItem;
             std::cout << "Digite o nome do novo item: ";
             std::getline(std::cin, novoItem.nome);
-            std::cout << "Digite a descrição do novo item: ";
+            std::cout << "Digite a descriÃ§Ã£o do novo item: ";
             std::getline(std::cin, novoItem.descricao);
             registro.criarItem(novoItem);
         } else if (opcao == 2) {
@@ -110,7 +106,7 @@ int main() {
         } else if (opcao == 6) {
             break;
         } else {
-            std::cout << "Opção inválida. Escolha novamente.\n";
+            std::cout << "OpÃ§Ã£o invÃ¡lida. Escolha novamente.\n";
         }
     }
 
